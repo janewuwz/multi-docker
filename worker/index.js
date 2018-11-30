@@ -14,7 +14,6 @@ function addOne(index) {
 }
 
 sub.on('message', (channel, message) => {
-    console.log(message)
     redisClient.hset('vals', message, addOne(parseInt(message)));
 });
 sub.subscribe('insert');
